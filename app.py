@@ -6,6 +6,7 @@ import os
 import sys
 
 from flask import Flask
+from werkzeug.utils import secure_filename
 
 
 from bar_qr_code_detector import *
@@ -29,18 +30,20 @@ def index():
 def upload_file():
    if request.method == 'POST':
       f = request.files['file']
- 
-      filepath = os.path.join(app.config['UPLOAD_FOLDER'], 'up.jpg')
+      filename = secure_filename(f.filename)
+ 	  
+      filepath = os.path.join(app.config['UPLOAD_FOLDER'],filename)
       # print(filepath)
       f.save(filepath)
 
-      barcode=barcode_no(filepath)
+      barcode=barcode_no(filepath,filename)
+      detected_name='det_'+filename
 
 
 
 
 
-      return render_template("upload.html", display_detection = 'down.jpg', fname = 'up.jpg',barcode=barcode)      
+      return render_template("upload.html", display_detection = detected_name, fname = filename,barcode=barcode)      
 
 
 

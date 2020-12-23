@@ -2,6 +2,7 @@
 import numpy as np
 import cv2
 from pyzbar.pyzbar import decode
+import os
 
 def read_barcode(frame):
     barcodes = decode(frame)                                     #decode() function returns a list of namedtuple called Decoded which contains the fields data, type, rect, polygon
@@ -24,7 +25,7 @@ def get_optimal_font_scale(text, width):
 
 #2
 
-def barcode_no(filepath):
+def barcode_no(filepath,filename):
 
     frame=cv2.imread(filepath)                             #reading image
     frame, barcode_info, barcode = read_barcode(frame)       #reading the barcode
@@ -45,7 +46,9 @@ def barcode_no(filepath):
 
 
     cv2.putText(frame, text, (5,13) , font, scale, font_color,fontThickness)
-    cv2.imwrite('static/Saved_Images/down.jpg',frame)
+    save_name='det_'+filename
+    saved_path=os.path.join('static/Saved_Images/',save_name)
+    cv2.imwrite(saved_path,frame)
 
     return text
 
