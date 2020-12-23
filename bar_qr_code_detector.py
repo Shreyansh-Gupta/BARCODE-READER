@@ -13,13 +13,13 @@ def read_barcode(frame):
         barcode_info = barcode.data.decode(
             'utf-8')  # The decoded string is in bytes. You need to decode it using utf8 to get a string.
 
-        cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0),   2)  # drawing a rectangle on the recognised bar/qr code
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0),   2)  #drawing a rectangle on the recognised bar/qr code
 
         imageWidth, imageHeight = h, w
         text = barcode_info
-        fontThickness = 3  # setting thickness of the font
-        font_color = (0, 0, 255)  # setting the font color
-        font = cv2.FONT_HERSHEY_SIMPLEX  # setting the font
+        fontThickness = 3  #setting thickness of the font
+        font_color = (0, 0, 255)  #setting the font color
+        font = cv2.FONT_HERSHEY_SIMPLEX  #setting the font
         scale = get_optimal_font_scale(text,
                                        imageWidth)  # this value can be from 0 to 1 (0,1] to change the size of the text relative to the image
         fontScale = min(imageWidth, imageHeight) / (25 / scale)  # defining font scale
