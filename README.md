@@ -9,6 +9,7 @@ This is the first page of our app where the user can upload an image from his/he
 <br><br><br>
 On pressing the 'Submit' button, a new page with the results of the barcode details are displayed. There is also an 'Upload another?' button to redirect to the first page for choosing another file.
 <br>
+In the output screen, our app shows both the images with the labelled text hidden inside the Code ( QR or Bar ), like the output shown below.
 ![Final Output](https://github.com/sauravakolia/BARCODE-READER/blob/main/res1.png)
 
 
