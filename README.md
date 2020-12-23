@@ -5,6 +5,7 @@ A barcode is a method of representing data in a visual, machine-readable form an
 
 The pyzbar and openCV libraries have been used in our program for detecting and decoding the barcode/ QR code images. The pyzbar library can read one-dimensional barcodes and QR codes using the zbar library. We have designed an app using flask and Heroku. The app takes in an image with a barcode and then decodes it. It then prints the output as the value or link present in the barcode/QR code.<br>
 This is the first page of our app where the user can upload an image from his/her device.</br>
+</br>
 <img src="res2.PNG" width="500"/> 
 <br><br><br>
 On pressing the 'Submit' button, a new page with the results of the barcode details are displayed. There is also an 'Upload another?' button to redirect to the first page for choosing another file.
