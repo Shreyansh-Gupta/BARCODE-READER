@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<center>
+        <br></br>
+        <br></br>
+    
+            <form action="/uploader" method="POST"
+                  enctype="multipart/form-data"
+                  class="form-horizontal">
+
+                <label>Barcode</label>
+        		<input type="file" class="form-control-file" id="vechicleimage" name="file" style="width:250px; ">
+
+
+        		<div align="center" id="formSubmit">
+    				<input class="btn btn-primary" type="submit" value="Submit">
+ 				</div>
+
+            </form>
+</body>
+</html>
+
+{% endblock %}
