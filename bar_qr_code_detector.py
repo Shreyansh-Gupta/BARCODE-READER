@@ -3,6 +3,8 @@ import numpy as np
 import cv2
 from pyzbar import pyzbar
 
+
+# find_library='/app/.apt/usr/lib/x86_64-linux-gnu/'
 def read_barcode(frame):
     barcodes = pyzbar.decode(frame)                                     #decode() function returns a list of namedtuple called Decoded which contains the fields data, type, rect, polygon
     for barcode in barcodes:
